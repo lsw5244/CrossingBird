@@ -11,6 +11,9 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float _moveTime = 0.1f;
 
+    [SerializeField]
+    private LayerMask _blockLayer;
+
     private Quaternion _left = Quaternion.Euler(0f, 270f, 0f);
     private Quaternion _right = Quaternion.Euler(0f, 90f, 0f);
     private Quaternion _foward = Quaternion.Euler(0f, 0f, 0f);
@@ -30,7 +33,10 @@ public class PlayerMove : MonoBehaviour
         _jumpAnimationName = "Jump";
 
         _prevPosition = transform.position;
+        _nextPosition = transform.position;
+
         _prevRotation = _foward;
+        _nextRotation = _foward;
     }
 
     void Update()
@@ -39,25 +45,25 @@ public class PlayerMove : MonoBehaviour
         {            
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                _nextPosition = transform.position + Vector3.left;
+                SearchNextPosition(Vector3.left);
                 _nextRotation = _left;
                 StartCoroutine(Move(_moveTime));
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                _nextPosition = transform.position - Vector3.left;
+                SearchNextPosition(Vector3.right);
                 _nextRotation = _right;
                 StartCoroutine(Move(_moveTime));
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                _nextPosition = transform.position + Vector3.forward;
+                SearchNextPosition(Vector3.forward);
                 _nextRotation = _foward;
                 StartCoroutine(Move(_moveTime));
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                _nextPosition = transform.position - Vector3.forward;
+                SearchNextPosition(Vector3.back);
                 _nextRotation = _back;
                 StartCoroutine(Move(_moveTime));
             }
@@ -84,5 +90,23 @@ public class PlayerMove : MonoBehaviour
         _prevRotation = _nextRotation;
 
         _canMove = true;
+    }
+
+    void SearchNextPosition(Vector3 direction)
+    {
+        RaycastHit hit;
+
+        // 장애물 검색
+        if(Physics.Raycast(transform.position + Vector3.up, direction, out hit, 1f))
+        {
+            return;
+        }
+
+        // 블럭 검색
+        if(Physics.Raycast(transform.position + Vector3.up + direction, Vector3.down, out hit, 2f, _blockLayer))
+        {
+            _nextPosition.x = hit.transform.position.x;
+            _nextPosition.z = hit.transform.position.z;
+        }
     }
 }
