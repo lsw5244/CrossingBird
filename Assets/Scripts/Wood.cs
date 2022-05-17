@@ -30,5 +30,7 @@ public class Wood : MonoBehaviour
         {
             _leafs[i].SetActive(false);
         }
+
+        gameObject.SetActive(false);
     }
 }
