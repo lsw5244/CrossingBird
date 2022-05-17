@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 4534126570661383130}
   - component: {fileID: 4534126570662444428}
   - component: {fileID: 4534126570660411273}
+  - component: {fileID: -1222442197469292372}
   m_Layer: 0
   m_Name: Car_4_Red
   m_TagString: Untagged
@@ -419,3 +420,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.047246363, y: 0.02008486, z: 0.022067524}
   m_Center: {x: -0.000344716, y: 0.0001621684, z: 4.656613e-10}
+--- !u!114 &-1222442197469292372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534126570660411278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c5c52631d9da747bff7359e0fded02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 10
