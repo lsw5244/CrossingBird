@@ -787,15 +787,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1886301885247511678}
-  - component: {fileID: 519816131}
   - component: {fileID: 5311706369264693521}
+  - component: {fileID: -2145309006549245706}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1886301885247511678
 Transform:
   m_ObjectHideFlags: 0
@@ -811,19 +811,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519816131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886301885247511677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c5c52631d9da747bff7359e0fded02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveSpeed: -40
 --- !u!65 &5311706369264693521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -837,6 +824,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 52, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2145309006549245706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886301885247511677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5b3f6e98f30f4439bcba37665ab270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 40
+  _parentRoadLine: {fileID: 0}
 --- !u!1 &2002712308820613279
 GameObject:
   m_ObjectHideFlags: 0
