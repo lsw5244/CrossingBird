@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Block
   - DeadZone
+  - FlowingBoard
   layers:
   - Default
   - TransparentFX
