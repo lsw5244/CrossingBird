@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     private Animator _animator;
 
     private string _jumpAnimationName;
+    private string _flowingBoardTag;
 
     [SerializeField]
     private float _moveTime = 0.1f;
@@ -38,6 +39,7 @@ public class PlayerMove : MonoBehaviour
 
         _animator = GetComponent<Animator>();
         _jumpAnimationName = "Jump";
+        _flowingBoardTag = "FlowingBoard";
 
         _prevPosition = transform.position;
         _nextPosition = transform.position;
@@ -120,6 +122,11 @@ public class PlayerMove : MonoBehaviour
 
             transform.parent = null;
             transform.parent = _nextBlockTransform;
+
+            if(hit.collider.tag == _flowingBoardTag)
+            {
+                hit.collider.GetComponent<BoxCollider>().isTrigger = false;
+            }
         }
     }
 }
