@@ -107,6 +107,8 @@ public class PlayerMove : MonoBehaviour
         {
             _nextPosition.x = hit.transform.position.x;
             _nextPosition.z = hit.transform.position.z;
+            transform.parent = null;
+            transform.parent = hit.transform;
         }
     }
 }
