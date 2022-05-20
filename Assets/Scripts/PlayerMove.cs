@@ -107,13 +107,7 @@ public class PlayerMove : MonoBehaviour
         {
             _nextPosition.x = hit.transform.position.x;
             _nextPosition.z = hit.transform.position.z;
-
-            if(hit.collider.tag == "FlowingBoard")
-            {
-                //_nextPosition.x = hit.transform.localPosition.x;
-                //_nextPosition.z = hit.transform.localPosition.z;
-            }
-
+                       
             transform.parent = null;
             transform.parent = hit.transform;
         }
