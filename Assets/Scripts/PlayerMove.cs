@@ -24,11 +24,18 @@ public class PlayerMove : MonoBehaviour
 
     private Quaternion _prevRotation;
     private Quaternion _nextRotation;
+    private Transform _nextBlockTransform;
 
     private bool _canMove = true;
 
     void Start()
     {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 2f, _blockLayer))
+        {
+            _nextBlockTransform = hit.transform;
+        }
+
         _animator = GetComponent<Animator>();
         _jumpAnimationName = "Jump";
 
@@ -41,8 +48,8 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if(_canMove == true)
-        {            
+        if (_canMove == true)
+        {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 SearchNextPosition(Vector3.left);
@@ -67,7 +74,7 @@ public class PlayerMove : MonoBehaviour
                 _nextRotation = _back;
                 StartCoroutine(Move(_moveTime));
             }
-        }        
+        }
     }
 
     IEnumerator Move(float moveTime)
@@ -81,35 +88,38 @@ public class PlayerMove : MonoBehaviour
         {
             runTime += Time.deltaTime;
 
+            _nextPosition.x = _nextBlockTransform.position.x;
+            _nextPosition.z = _nextBlockTransform.position.z;
+
             transform.position = Vector3.Lerp(_prevPosition, _nextPosition, runTime / moveTime);
             transform.rotation = Quaternion.Lerp(_prevRotation, _nextRotation, runTime / moveTime);
 
             yield return null;
         }
-        _prevPosition = _nextPosition;
-        _prevRotation = _nextRotation;
 
         _canMove = true;
     }
 
     void SearchNextPosition(Vector3 direction)
     {
+        _prevPosition = transform.position;
+        _prevRotation = transform.rotation;
+
         RaycastHit hit;
 
         // 장애물 검색
-        if(Physics.Raycast(transform.position + Vector3.up, direction, out hit, 1f))
+        if (Physics.Raycast(transform.position + Vector3.up, direction, out hit, 1f))
         {
             return;
         }
 
         // 블럭 검색
-        if(Physics.Raycast(transform.position + Vector3.up + direction, Vector3.down, out hit, 2f, _blockLayer))
+        if (Physics.Raycast(transform.position + Vector3.up + direction, Vector3.down, out hit, 2f, _blockLayer))
         {
-            _nextPosition.x = hit.transform.position.x;
-            _nextPosition.z = hit.transform.position.z;
-                       
+            _nextBlockTransform = hit.transform;
+
             transform.parent = null;
-            transform.parent = hit.transform;
+            transform.parent = _nextBlockTransform;
         }
     }
 }
