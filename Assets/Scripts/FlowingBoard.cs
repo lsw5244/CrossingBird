@@ -39,6 +39,7 @@ public class FlowingBoard : MonoBehaviour
         for (int i = 0; i < _disableBoards.Length; ++i)
         {
             _disableBoards[i].SetActive(false);
+            _disableBoards[i].GetComponent<BoxCollider>().isTrigger = true;
         }
     }
 }

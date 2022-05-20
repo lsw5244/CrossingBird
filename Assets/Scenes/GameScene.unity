@@ -935,20 +935,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5486271169497685400, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: _spawnBoardCount
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5486271169497685401, guid: d9b96c5ad851c0440a2da7e61584a7b7,
         type: 3}
       propertyPath: m_Name
       value: FlowingWaterLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685401, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
         type: 3}
