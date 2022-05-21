@@ -10,4 +10,9 @@ public class FollowingDeadZone : MonoBehaviour
     {
         transform.Translate(0f, 0f, moveSpeed * Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.SetActive(false);
+    }
 }
