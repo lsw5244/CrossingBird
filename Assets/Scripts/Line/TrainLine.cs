@@ -24,9 +24,10 @@ public class TrainLine : MonoBehaviour
     private void Awake()
     {
         _trainSpawnPosition = _train.transform.position;
+        _trainSpawnPosition.z = transform.position.z;
         TurnOnGreenTrafficLight();
 
-        _train.SetActive(false);
+        //_train.SetActive(false);
     }
 
     private void OnEnable()
@@ -62,9 +63,7 @@ public class TrainLine : MonoBehaviour
 
     void SpawnTrain()
     {
-        _trainSpawnPosition.z = transform.position.z;
-
-        _train.transform.position = _trainSpawnPosition;
+        _train.transform.localPosition = _trainSpawnPosition;
         _train.SetActive(true);
     }
 

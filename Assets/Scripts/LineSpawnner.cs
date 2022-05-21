@@ -48,7 +48,6 @@ public class LineSpawnner : MonoBehaviour
         {
             SpawnBlock();
         }
-
     }
 
     void SpawnBlock()
@@ -56,9 +55,14 @@ public class LineSpawnner : MonoBehaviour
         _randomIndex = Random.Range(0, (int)LineType.End);
 
         GameObject block = GetBlock((LineType)_randomIndex);
-        block.SetActive(true);
         block.transform.position = Vector3.forward * _spawnZPos;
+        {
+            block.SetActive(true);
+            Debug.Log($"{block.name}을 활성화 시킴");
+        }
         _spawnZPos++;
+
+        Debug.Log($"{_spawnZPos - 1}좌표에 {block.name} 생성 !!!");
     }
 
     GameObject GetBlock(LineType type)
