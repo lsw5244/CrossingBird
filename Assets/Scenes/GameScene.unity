@@ -437,6 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 281680699}
+  - component: {fileID: 281680700}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -458,6 +459,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &281680700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281680698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1842a9e2feab9264ea7df30af37bd6e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lines:
+  - {fileID: 5486271169497685401, guid: d9b96c5ad851c0440a2da7e61584a7b7, type: 3}
+  - {fileID: 142284649238931112, guid: 2b504ad20693ab14eaa7f1b3518d744a, type: 3}
+  - {fileID: 8022664719580952510, guid: 3c67894786d45184eb69b64e8b4bae13, type: 3}
+  - {fileID: 374028277521934365, guid: 839deeb97ba1053488c51ea77ce06917, type: 3}
+  - {fileID: 1572032477913115270, guid: 59258740c478a0d4088d8739cfea4cb7, type: 3}
+  _PoolSize: 30
 --- !u!1 &533750380
 GameObject:
   m_ObjectHideFlags: 0
