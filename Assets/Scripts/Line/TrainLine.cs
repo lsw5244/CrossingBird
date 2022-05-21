@@ -21,7 +21,6 @@ public class TrainLine : MonoBehaviour
     [SerializeField]
     private float _maxSpawnDelay = 3.0f;
     
-
     private void Awake()
     {
         _trainSpawnPosition = _train.transform.position;

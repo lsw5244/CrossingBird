@@ -15,9 +15,19 @@ public class LineSpawnner : MonoBehaviour
     [SerializeField]
     private int _PoolSize = 30;
 
+    public Transform _cameraTransfom;
+
+    [SerializeField]
+    private float _startSpawnZPos = 0f;
+    private float _spawnZPos;
+    [SerializeField]
+    private float _spawnBlockDistance = 20f;
+
+    private int _randomIndex;
+
     void Start()
     {
-        //_spawnZPos = _startSpawnZPos;
+        _spawnZPos = _startSpawnZPos;
         _linePool = new GameObject[(int)LineType.End, _PoolSize];
 
         for (int i = 0; i < _lines.Length; ++i)
@@ -30,4 +40,38 @@ public class LineSpawnner : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        // 4부터 시작 마지막 블럭은 24임 -> 카메라와 spawnZPos랑 20(새 블럭이 생성 될 기준) 이상 차이나면 만들기
+        // 카메라 기준에서 일정거리 
+        if (_spawnZPos - _cameraTransfom.position.z < _spawnBlockDistance)
+        {
+            SpawnBlock();
+        }
+
+    }
+
+    void SpawnBlock()
+    {
+        _randomIndex = Random.Range(0, (int)LineType.End);
+
+        GameObject block = GetBlock((LineType)_randomIndex);
+        block.SetActive(true);
+        block.transform.position = Vector3.forward * _spawnZPos;
+        _spawnZPos++;
+    }
+
+    GameObject GetBlock(LineType type)
+    {
+        for (int i = 0; i < _PoolSize; ++i)
+        {
+            if (_linePool[(int)type, i].activeSelf == false)
+            {
+                return _linePool[(int)type, i];
+            }
+        }
+
+        Debug.LogError("라인POOL에 있는 블럭이 부족함 !");
+        return null;
+    }
 }

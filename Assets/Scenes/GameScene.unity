@@ -478,6 +478,9 @@ MonoBehaviour:
   - {fileID: 374028277521934365, guid: 839deeb97ba1053488c51ea77ce06917, type: 3}
   - {fileID: 1572032477913115270, guid: 59258740c478a0d4088d8739cfea4cb7, type: 3}
   _PoolSize: 30
+  _cameraTransfom: {fileID: 1342035274}
+  _startSpawnZPos: 4
+  _spawnBlockDistance: 20
 --- !u!1 &533750380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531981800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalPosition: {x: 0, y: 2.18, z: -4}
   m_LocalScale: {x: 31, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

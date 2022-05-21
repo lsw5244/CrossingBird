@@ -6,7 +6,7 @@ public class Train : MonoBehaviour
 {
     public float _moveSpeed = 40f;
     [SerializeField]
-    private TrainLine _parentRoadLine;
+    private TrainLine _parentTrainLine;
 
     void Update()
     {
@@ -16,6 +16,6 @@ public class Train : MonoBehaviour
 
     private void OnDisable()
     {
-        _parentRoadLine.TurnOnGreenTrafficLight();
+        _parentTrainLine.TurnOnGreenTrafficLight();
     }
 }
