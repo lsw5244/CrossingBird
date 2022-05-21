@@ -28,6 +28,10 @@ public class PlayerMove : MonoBehaviour
     private Transform _nextBlockTransform;
 
     private bool _canMove = true;
+    
+    [HideInInspector]
+    public int progress = 0;
+    private bool _changeNextPosition = true;
 
     void Start()
     {
@@ -67,12 +71,20 @@ public class PlayerMove : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 SearchNextPosition(Vector3.forward);
+                if(_changeNextPosition == true)
+                {
+                    ++progress;
+                }
                 _nextRotation = _foward;
                 StartCoroutine(Move(_moveTime));
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 SearchNextPosition(Vector3.back);
+                if (_changeNextPosition == true)
+                {
+                    --progress;
+                }
                 _nextRotation = _back;
                 StartCoroutine(Move(_moveTime));
             }
@@ -106,12 +118,14 @@ public class PlayerMove : MonoBehaviour
     {
         _prevPosition = transform.position;
         _prevRotation = transform.rotation;
+        _changeNextPosition = true;
 
         RaycastHit hit;
 
         // 장애물 검색
         if (Physics.Raycast(transform.position + Vector3.up, direction, out hit, 1f))
         {
+            _changeNextPosition = false;
             return;
         }
 

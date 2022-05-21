@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerTransform: {fileID: 100483382}
-  playerFollowSpeed: 0.05
+  playerFollowSpeed: 0.02
 --- !u!1001 &1395846817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1135,8 +1135,9 @@ GameObject:
   - component: {fileID: 1531981803}
   - component: {fileID: 1531981802}
   - component: {fileID: 1531981801}
+  - component: {fileID: 1531981805}
   m_Layer: 0
-  m_Name: DeadZone
+  m_Name: FollowingDeadZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1216,6 +1217,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531981805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531981800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d06cc7a6e0f524495833bd811c3700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1001 &1829294615
 PrefabInstance:
   m_ObjectHideFlags: 0
