@@ -8,6 +8,11 @@ public class Train : MonoBehaviour
     [SerializeField]
     private TrainLine _parentTrainLine;
 
+    private void Awake()
+    {
+        _parentTrainLine = GetComponentInParent<TrainLine>();
+    }
+
     void Update()
     {
         //transform.Translate(transform.forward * _moveSpeed * Time.deltaTime);

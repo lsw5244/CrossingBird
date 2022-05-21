@@ -44,7 +44,6 @@ public class TrainLine : MonoBehaviour
     {
         while (gameObject.activeSelf == true)
         {
-
             if(_train.activeSelf == false)
             {
                 // 경고 딜레이(0.5) + 빨간 불 키기
@@ -63,6 +62,8 @@ public class TrainLine : MonoBehaviour
 
     void SpawnTrain()
     {
+        _trainSpawnPosition.z = transform.position.z;
+
         _train.transform.position = _trainSpawnPosition;
         _train.SetActive(true);
     }
