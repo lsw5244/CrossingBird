@@ -145,21 +145,6 @@ public class PlayerMove : MonoBehaviour
 
             if (_TouchPositionGap.magnitude < 100)
             {
-                //// 앞으로 전진
-                //SearchNextPosition(Vector3.forward);
-                //if (_changeNextPosition == true)
-                //{
-                //    ++progress;
-                //}
-
-                //if (progress > maxProgress)
-                //{
-                //    maxProgress = progress;
-                //    UIManager.Instance.UpdateScore();
-                //}
-
-                //_nextRotation = _foward;
-                //StartCoroutine(Move(_moveTime));
                 return;
             }
 
