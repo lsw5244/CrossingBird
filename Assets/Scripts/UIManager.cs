@@ -19,6 +19,9 @@ public class UIManager : MonoBehaviour
     public Text finalScoreText;
     public Text finalHighScoreText;
 
+    public Canvas fadeCanvas;
+    public Image fadeImage;
+
     void Awake()
     {
         if (Instance == null)
@@ -37,6 +40,8 @@ public class UIManager : MonoBehaviour
         scoreText.text = _score.ToString();
 
         highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+
+        StartCoroutine(FadeIn());
     }
 
     public void UpdateScore()
@@ -64,6 +69,36 @@ public class UIManager : MonoBehaviour
 
     public void Restart()
     {
+        StartCoroutine(FadeOut());
+    }
+
+    IEnumerator FadeIn() // 밝아지기
+    {
+        fadeCanvas.gameObject.SetActive(true);
+        Color fadeColor = fadeImage.color;
+
+        while (fadeColor.a > 0)
+        {
+            fadeColor.a -= 0.1f;
+            fadeImage.color = fadeColor;
+            yield return new WaitForSeconds(0.1f);
+        }
+        fadeCanvas.gameObject.SetActive(false);
+    }
+
+    IEnumerator FadeOut() // 어두워지기
+    {
+        fadeCanvas.gameObject.SetActive(true);
+        gameOverCanvas.gameObject.SetActive(false);
+        Color fadeColor = fadeImage.color;
+
+        while (fadeColor.a < 1f)
+        {
+            fadeColor.a += 0.1f;
+            fadeImage.color = fadeColor;
+            yield return new WaitForSeconds(0.1f);
+        }
+
         SceneManager.LoadScene(0);
     }
 }
