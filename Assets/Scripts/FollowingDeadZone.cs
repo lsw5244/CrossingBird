@@ -13,6 +13,18 @@ public class FollowingDeadZone : PlayerFollowingObject
 
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.SetActive(false);
+        if(other.CompareTag("Line") == true)
+        {
+            other.gameObject.SetActive(false);
+            return;
+        }
+
+        if (other.CompareTag("Player") == true)
+        {
+            other.transform.parent = null;
+            other.isTrigger = true;
+
+            GameManager.Instance.GameOver();
+        }
     }
 }

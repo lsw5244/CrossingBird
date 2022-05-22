@@ -9,6 +9,7 @@ TagManager:
   - FlowingBoard
   - AttackObject
   - WaterBlock
+  - Line
   layers:
   - Default
   - TransparentFX

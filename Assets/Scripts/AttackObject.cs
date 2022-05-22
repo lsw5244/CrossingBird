@@ -6,7 +6,7 @@ public class AttackObject : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.CompareTag("Player") == true)
         {
             other.transform.parent = null;
             other.isTrigger = true;

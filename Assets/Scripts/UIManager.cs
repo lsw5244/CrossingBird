@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     //private int _highScore;
 
     public Canvas gameOverCanvas;
+    public Text finalScoreText;
+    public Text finalHighScoreText;
 
     void Awake()
     {
@@ -56,6 +58,8 @@ public class UIManager : MonoBehaviour
     public void GameOver()
     {
         gameOverCanvas.gameObject.SetActive(true);
+        finalScoreText.text = $"Scroe : {_score}";
+        finalHighScoreText.text = $"High Score : {PlayerPrefs.GetInt("HighScore", 0)}";
     }
 
     public void Restart()
