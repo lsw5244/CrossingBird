@@ -35,6 +35,10 @@ public class PlayerMove : MonoBehaviour
 
     private bool _changeNextPosition = true;
 
+    private bool _wait;
+    private Vector3 _firstTouchPosition;
+    private Vector3 _TouchPositionGap;
+
     void Start()
     {
         RaycastHit hit;
@@ -54,49 +58,15 @@ public class PlayerMove : MonoBehaviour
         _nextRotation = _foward;
     }
 
+    
     void Update()
     {
         if (_canMove == true)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                SearchNextPosition(Vector3.left);
-                _nextRotation = _left;
-                StartCoroutine(Move(_moveTime));
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                SearchNextPosition(Vector3.right);
-                _nextRotation = _right;
-                StartCoroutine(Move(_moveTime));
-            }
-            else if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                SearchNextPosition(Vector3.forward);
-                if(_changeNextPosition == true)
-                {
-                    ++progress;
-                }
+            TouchMove();
 
-                if (progress > maxProgress)
-                {
-                    maxProgress = progress;
-                    UIManager.Instance.UpdateScore();
-                }
-
-                _nextRotation = _foward;
-                StartCoroutine(Move(_moveTime));
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                SearchNextPosition(Vector3.back);
-                if (_changeNextPosition == true)
-                {
-                    --progress;
-                }
-                _nextRotation = _back;
-                StartCoroutine(Move(_moveTime));
-            }
+            KeyboardMove();
+            
         }
     }
 
@@ -158,4 +128,135 @@ public class PlayerMove : MonoBehaviour
             }
         }
     }
+
+    void TouchMove()
+    {
+        // 처음 터치 한 위치 저장  // 터치 한손으로 && 터치발생상태 == 터치시작
+        if (Input.GetMouseButtonDown(0) || (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began))  // 확인
+        {
+            _wait = true;
+            _firstTouchPosition = Input.GetMouseButtonDown(0) ? Input.mousePosition : (Vector3)Input.GetTouch(0).position;
+        }
+
+        // 움직인 부분에서 처음 터치한 부분을 -하여 첫번째 터치와 두번째 터치의 gap 저장
+        if (Input.GetMouseButton(0) || (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved))
+        {
+            _TouchPositionGap = (Input.GetMouseButton(0) ? Input.mousePosition : (Vector3)Input.GetTouch(0).position) - _firstTouchPosition;
+
+            if (_TouchPositionGap.magnitude < 100)
+            {
+                //// 앞으로 전진
+                //SearchNextPosition(Vector3.forward);
+                //if (_changeNextPosition == true)
+                //{
+                //    ++progress;
+                //}
+
+                //if (progress > maxProgress)
+                //{
+                //    maxProgress = progress;
+                //    UIManager.Instance.UpdateScore();
+                //}
+
+                //_nextRotation = _foward;
+                //StartCoroutine(Move(_moveTime));
+                return;
+            }
+
+            _TouchPositionGap.Normalize();
+
+            if (_wait == true)
+            {
+                _wait = false;
+
+                if (_TouchPositionGap.y > 0 && _TouchPositionGap.x > -0.5f && _TouchPositionGap.x < 0.5f)
+                {
+                    // 앞으로 전진
+                    SearchNextPosition(Vector3.forward);
+                    if (_changeNextPosition == true)
+                    {
+                        ++progress;
+                    }
+
+                    if (progress > maxProgress)
+                    {
+                        maxProgress = progress;
+                        UIManager.Instance.UpdateScore();
+                    }
+
+                    _nextRotation = _foward;
+                    StartCoroutine(Move(_moveTime));
+                }
+                else if (_TouchPositionGap.y < 0 && _TouchPositionGap.x > -0.5f && _TouchPositionGap.x < 0.5f)
+                {
+                    // 아래로 드래그 했을 때
+                    SearchNextPosition(Vector3.back);
+                    if (_changeNextPosition == true)
+                    {
+                        --progress;
+                    }
+                    _nextRotation = _back;
+                    StartCoroutine(Move(_moveTime));
+                }
+                else if (_TouchPositionGap.x > 0 && _TouchPositionGap.y > -0.5f && _TouchPositionGap.y < 0.5f)
+                {
+                    // 오른쪽으로 드래그 했을 때
+                    SearchNextPosition(Vector3.right);
+                    _nextRotation = _right;
+                    StartCoroutine(Move(_moveTime));
+                }
+                else if (_TouchPositionGap.x < 0 && _TouchPositionGap.y > -0.5f && _TouchPositionGap.y < 0.5f)
+                {
+                    // 왼쪽으로 드래그 했을 때
+                    SearchNextPosition(Vector3.left);
+                    _nextRotation = _left;
+                    StartCoroutine(Move(_moveTime));
+                }
+            }
+        }
+    }
+
+    void KeyboardMove()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            SearchNextPosition(Vector3.left);
+            _nextRotation = _left;
+            StartCoroutine(Move(_moveTime));
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SearchNextPosition(Vector3.right);
+            _nextRotation = _right;
+            StartCoroutine(Move(_moveTime));
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            SearchNextPosition(Vector3.forward);
+            if (_changeNextPosition == true)
+            {
+                ++progress;
+            }
+
+            if (progress > maxProgress)
+            {
+                maxProgress = progress;
+                UIManager.Instance.UpdateScore();
+            }
+
+            _nextRotation = _foward;
+            StartCoroutine(Move(_moveTime));
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            SearchNextPosition(Vector3.back);
+            if (_changeNextPosition == true)
+            {
+                --progress;
+            }
+            _nextRotation = _back;
+            StartCoroutine(Move(_moveTime));
+        }
+    }
+
 }
