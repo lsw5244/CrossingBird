@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8485131561772784865}
   - component: {fileID: 75012645}
+  - component: {fileID: 5976728867054048976}
   m_Layer: 9
   m_Name: Wood
   m_TagString: Untagged
@@ -49,6 +50,20 @@ MonoBehaviour:
   - {fileID: 7035603629385389104}
   - {fileID: 3887300674579670911}
   - {fileID: 968042491837098519}
+  leapAddPercentage: 5
+--- !u!65 &5976728867054048976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604890862543328441}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 100, z: 0.8}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &968042491837098519
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +75,6 @@ GameObject:
   - component: {fileID: 2365546224096074314}
   - component: {fileID: 537136321840805832}
   - component: {fileID: 850616773541963083}
-  - component: {fileID: 5184006991134858341}
   m_Layer: 9
   m_Name: Leaf4
   m_TagString: Untagged
@@ -129,19 +143,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5184006991134858341
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968042491837098519}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1421747653877807248
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +154,6 @@ GameObject:
   - component: {fileID: 5332097549440899672}
   - component: {fileID: 6656145547628567680}
   - component: {fileID: 5249807340265144848}
-  - component: {fileID: 5852709915708779372}
   m_Layer: 9
   m_Name: Leaf1
   m_TagString: Untagged
@@ -222,19 +222,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5852709915708779372
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421747653877807248}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3887300674579670911
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +233,6 @@ GameObject:
   - component: {fileID: 5748671977848993422}
   - component: {fileID: 7422109666534243370}
   - component: {fileID: 1829079254718643776}
-  - component: {fileID: 5324241753858556368}
   m_Layer: 9
   m_Name: Leaf3
   m_TagString: Untagged
@@ -315,19 +301,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5324241753858556368
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3887300674579670911}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7035603629385389104
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +312,6 @@ GameObject:
   - component: {fileID: 6794036800294990975}
   - component: {fileID: 4772485071377571585}
   - component: {fileID: 7759251488360826712}
-  - component: {fileID: 6244046519661787768}
   m_Layer: 9
   m_Name: Leaf2
   m_TagString: Untagged
@@ -408,19 +380,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6244046519661787768
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7035603629385389104}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7146909170159358010
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +391,6 @@ GameObject:
   - component: {fileID: 7146909170159358014}
   - component: {fileID: 7146909170159358013}
   - component: {fileID: 7146909170159358012}
-  - component: {fileID: 7146909170159358011}
   m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
@@ -505,16 +463,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7146909170159358011
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7146909170159358010}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

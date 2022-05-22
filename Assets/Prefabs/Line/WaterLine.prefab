@@ -192,6 +192,9 @@ MonoBehaviour:
   - {fileID: 4128764959390137508}
   - {fileID: 6075289026692805106}
   boardActivePercentage: 3
+  _blockingObjectLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &1572032478925287992
 GameObject:
   m_ObjectHideFlags: 0

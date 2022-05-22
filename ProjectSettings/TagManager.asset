@@ -10,6 +10,7 @@ TagManager:
   - AttackObject
   - WaterBlock
   - Line
+  - BlockingObject
   layers:
   - Default
   - TransparentFX
