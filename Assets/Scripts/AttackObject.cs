@@ -7,7 +7,9 @@ public class AttackObject : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
-        {            
+        {
+            other.transform.parent = null;
+            other.isTrigger = true;
             GameManager.Instance.GameOver();
         }
     }

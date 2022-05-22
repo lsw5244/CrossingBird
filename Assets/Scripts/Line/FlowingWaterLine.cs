@@ -94,7 +94,7 @@ public class FlowingWaterLine : MonoBehaviour
 
     void SetBoardSpawnPosition()
     {
-        _boardSpawnPosition.x = _boardMoveDirection == BoardMoveDirection.Right ? -14f : 14f;
+        _boardSpawnPosition.x = _boardMoveDirection == BoardMoveDirection.Right ? -7f : 7f;
         _boardSpawnPosition.y = _selectBoard.transform.position.y;
         _boardSpawnPosition.z = transform.position.z;
         _selectBoard.transform.position = _boardSpawnPosition;
