@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2541036426696935508}
   - component: {fileID: 2541036426698229876}
   - component: {fileID: 2541036426699229876}
+  - component: {fileID: 1368989183559169674}
+  - component: {fileID: 6925485076507845155}
   m_Layer: 8
   m_Name: Water_A
   m_TagString: Block
@@ -79,3 +81,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1368989183559169674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541036426697299060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39999998, y: 0.37, z: 0.39999998}
+  m_Center: {x: 0, y: 0.19999999, z: 0}
+--- !u!114 &6925485076507845155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541036426697299060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef479b9a26ac9494caa846f273b0844a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
