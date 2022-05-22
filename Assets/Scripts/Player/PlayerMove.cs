@@ -135,6 +135,10 @@ public class PlayerMove : MonoBehaviour
         if (Physics.Raycast(transform.position + Vector3.up, direction, out hit, 1f))
         {
             _changeNextPosition = false;
+            if(hit.collider.CompareTag("AttackObject"))
+            {
+                GameManager.Instance.GameOver();
+            }
             return;
         }
 
