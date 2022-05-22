@@ -11,4 +11,6 @@ public class CarMove : MonoBehaviour
         //transform.Translate(transform.forward * _moveSpeed * Time.deltaTime);
         transform.position += transform.right * _moveSpeed * Time.deltaTime;
     }
+
+
 }

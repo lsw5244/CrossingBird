@@ -58,11 +58,8 @@ public class LineSpawnner : MonoBehaviour
         block.transform.position = Vector3.forward * _spawnZPos;
         {
             block.SetActive(true);
-            Debug.Log($"{block.name}을 활성화 시킴");
         }
         _spawnZPos++;
-
-        Debug.Log($"{_spawnZPos - 1}좌표에 {block.name} 생성 !!!");
     }
 
     GameObject GetBlock(LineType type)

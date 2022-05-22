@@ -4,32 +4,36 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    //[SerializeField]
-    //private Transform _playerTransform;
-    //public float playerFollowSpeed = 0.05f;
-
-    //public float moveSpeed = 5f;
-
-    //void Update()
-    //{
-    //    transform.position = Vector3.Lerp(transform.position, _playerTransform.position, playerFollowSpeed);
-    //}
-
     [SerializeField]
     private Transform _playerTransform;
 
     public float playerFollowSpeed = 0.01f;
-    public float moveSpeed = 1f;
+    [SerializeField]
+    private float _orignMoveSpeed = 1f;
+    private float moveSpeed = 1f;
+    public float acceleratedMoveSpeed = 5f;
+    public float moveSpeedAccelerationDistatnce = 4f;
 
     private Vector3 _nextPosition;
 
     private void Start()
     {
+        moveSpeed = _orignMoveSpeed;
         _nextPosition = Vector3.zero;
     }
 
     private void Update()
     {
+        Debug.Log(_playerTransform.position.z - transform.position.z);
+        if(_playerTransform.position.z - transform.position.z > moveSpeedAccelerationDistatnce)
+        {
+            moveSpeed = acceleratedMoveSpeed;
+        }
+        else
+        {
+            moveSpeed = _orignMoveSpeed;
+        }
+
         _nextPosition.x = Mathf.Lerp(transform.position.x, _playerTransform.position.x, playerFollowSpeed);
         _nextPosition.z += moveSpeed * Time.deltaTime;
 

@@ -1033,7 +1033,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerTransform: {fileID: 100483382}
   playerFollowSpeed: 0.01
-  moveSpeed: 0.5
+  _orignMoveSpeed: 1
+  acceleratedMoveSpeed: 5
+  moveSpeedAccelerationDistatnce: 4
 --- !u!1 &1531981800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1531981801
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1227,85 +1229,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a1aec021ecac8145b08bb70c07cdc14, type: 3}
---- !u!1001 &1573937045
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2290877286034276582, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244048122709955775, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685401, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_Name
-      value: FlowingWaterLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5486271169497685402, guid: d9b96c5ad851c0440a2da7e61584a7b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d9b96c5ad851c0440a2da7e61584a7b7, type: 3}
 --- !u!1001 &1908074518
 PrefabInstance:
   m_ObjectHideFlags: 0

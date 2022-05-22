@@ -14,6 +14,5 @@ public class FollowingDeadZone : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         other.gameObject.SetActive(false);
-        Debug.Log($"DeadZone이 {other.name} 오브젝트 비활성화 시킴");
     }
 }
