@@ -31,6 +31,8 @@ public class PlayerMove : MonoBehaviour
     
     [HideInInspector]
     public int progress = 0;
+    private int maxProgress = 0;
+
     private bool _changeNextPosition = true;
 
     void Start()
@@ -75,6 +77,13 @@ public class PlayerMove : MonoBehaviour
                 {
                     ++progress;
                 }
+
+                if (progress > maxProgress)
+                {
+                    maxProgress = progress;
+                    UIManager.Instance.UpdateScore();
+                }
+
                 _nextRotation = _foward;
                 StartCoroutine(Move(_moveTime));
             }
