@@ -789,9 +789,10 @@ GameObject:
   - component: {fileID: 1886301885247511678}
   - component: {fileID: 5311706369264693521}
   - component: {fileID: -2145309006549245706}
+  - component: {fileID: -4295709064837665934}
   m_Layer: 0
   m_Name: Train
-  m_TagString: Untagged
+  m_TagString: AttackObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -837,7 +838,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 40
-  _parentRoadLine: {fileID: 0}
+  _parentTrainLine: {fileID: 0}
+--- !u!114 &-4295709064837665934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886301885247511677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef479b9a26ac9494caa846f273b0844a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2002712308820613279
 GameObject:
   m_ObjectHideFlags: 0

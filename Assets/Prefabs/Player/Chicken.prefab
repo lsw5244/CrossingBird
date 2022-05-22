@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6748979025875707143}
   m_Layer: 0
   m_Name: Chicken
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   _blockLayer:
     serializedVersion: 2
     m_Bits: 256
+  progress: 0
 --- !u!1 &72657041545740845
 GameObject:
   m_ObjectHideFlags: 0

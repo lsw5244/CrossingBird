@@ -38,4 +38,9 @@ public class CameraMove : PlayerFollowingObject
 
         transform.position = _nextPosition;
     }
+
+    public void CameraStop()
+    {
+        _orignMoveSpeed = 0f;
+    }
 }

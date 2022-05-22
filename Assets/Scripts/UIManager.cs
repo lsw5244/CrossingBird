@@ -53,9 +53,9 @@ public class UIManager : MonoBehaviour
         highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
-    void GameOver()
+    public void GameOver()
     {
-        gameOverCanvas.enabled = true;
+        gameOverCanvas.gameObject.SetActive(true);
     }
 
     public void Restart()

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class PlayerFollowingObject : MonoBehaviour
 {
-    static protected float moveSpeed = 1f;    
+    static public float moveSpeed = 1f;    
 }

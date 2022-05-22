@@ -595,6 +595,7 @@ GameObject:
   - component: {fileID: 281680699}
   - component: {fileID: 281680700}
   - component: {fileID: 281680701}
+  - component: {fileID: 281680702}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -653,6 +654,20 @@ MonoBehaviour:
   scoreText: {fileID: 181413342}
   highScoreText: {fileID: 803916331}
   gameOverCanvas: {fileID: 1747221250}
+--- !u!114 &281680702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281680698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb96908990d2c94187910385d83ae6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMove: {fileID: 1258995632}
+  _cameraMove: {fileID: 1342035275}
 --- !u!1 &290775024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,6 +1408,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a1aec021ecac8145b08bb70c07cdc14, type: 3}
+--- !u!114 &1258995632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6748979025875707143, guid: bad866ce7627f6141ba4a71be3fa08ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 6676727357519780919}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a1f96b5db6de4458170cd0fe0cb15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1331612081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1982,7 +2009,7 @@ RectTransform:
   - {fileID: 290775025}
   - {fileID: 1944417862}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2053,7 +2080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1908074518
 PrefabInstance:
