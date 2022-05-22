@@ -138,6 +138,8 @@ public class PlayerMove : MonoBehaviour
             if(hit.collider.CompareTag("AttackObject"))
             {
                 GameManager.Instance.GameOver();
+                GetComponent<BoxCollider>().isTrigger = true;
+                GetComponent<Rigidbody>().AddForce(hit.transform.position - transform.position * 100f);
             }
             return;
         }
