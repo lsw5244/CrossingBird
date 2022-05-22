@@ -13,7 +13,7 @@ public class FollowingDeadZone : PlayerFollowingObject
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Line") == true)
+        if (other.CompareTag("Line") == true)
         {
             other.gameObject.SetActive(false);
             return;
@@ -23,8 +23,8 @@ public class FollowingDeadZone : PlayerFollowingObject
         {
             other.transform.parent = null;
             other.isTrigger = true;
-
             GameManager.Instance.GameOver();
+            return;
         }
     }
 }
