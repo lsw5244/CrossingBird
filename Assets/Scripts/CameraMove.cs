@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMove : MonoBehaviour
+public class CameraMove : PlayerFollowingObject
 {
     [SerializeField]
     private Transform _playerTransform;
@@ -10,7 +10,7 @@ public class CameraMove : MonoBehaviour
     public float playerFollowSpeed = 0.01f;
     [SerializeField]
     private float _orignMoveSpeed = 1f;
-    private float moveSpeed = 1f;
+    //private float moveSpeed = 1f;
     public float acceleratedMoveSpeed = 5f;
     public float moveSpeedAccelerationDistatnce = 4f;
 
@@ -24,7 +24,6 @@ public class CameraMove : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_playerTransform.position.z - transform.position.z);
         if(_playerTransform.position.z - transform.position.z > moveSpeedAccelerationDistatnce)
         {
             moveSpeed = acceleratedMoveSpeed;

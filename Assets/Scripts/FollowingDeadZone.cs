@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowingDeadZone : MonoBehaviour
+public class FollowingDeadZone : PlayerFollowingObject
 {
-    public float moveSpeed = 5f;       
+    //public float moveSpeed = 5f;
 
     void Update()
     {
