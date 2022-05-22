@@ -9,6 +9,8 @@ public class LineSpawnner : MonoBehaviour
         FlowingWater, Forest, Road, Train, Water, End
     }
 
+    private LineType _prevLineType = LineType.End;
+
     [SerializeField]
     private GameObject[] _lines;
     private GameObject[,] _linePool;
@@ -52,7 +54,16 @@ public class LineSpawnner : MonoBehaviour
 
     void SpawnBlock()
     {
-        _randomIndex = Random.Range(0, (int)LineType.End);
+        while(true)
+        {
+            _randomIndex = Random.Range(0, (int)LineType.End);
+            if(_prevLineType == LineType.Water && (LineType)_randomIndex == LineType.Water)
+            {
+                continue;
+            }
+            _prevLineType = (LineType)_randomIndex;
+            break;
+        }
 
         GameObject block = GetBlock((LineType)_randomIndex);
         block.transform.position = Vector3.forward * _spawnZPos;
