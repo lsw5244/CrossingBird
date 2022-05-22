@@ -42,5 +42,6 @@ public class CameraMove : PlayerFollowingObject
     public void CameraStop()
     {
         _orignMoveSpeed = 0f;
+        playerFollowSpeed = 0f;
     }
 }

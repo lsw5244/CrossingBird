@@ -8,6 +8,7 @@ TagManager:
   - DeadZone
   - FlowingBoard
   - AttackObject
+  - WaterBlock
   layers:
   - Default
   - TransparentFX
