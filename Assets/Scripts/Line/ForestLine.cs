@@ -9,7 +9,9 @@ public class ForestLine : MonoBehaviour
     [SerializeField]
     private GameObject[] _outterWoods;
 
+    [Range(0, 10)]
     public int innerWoodSpawnPercentage;
+    [Range(0, 10)]
     public int outterWoodSpawnPercentage;
 
     private void OnEnable()
@@ -26,7 +28,7 @@ public class ForestLine : MonoBehaviour
     {
         for (int i = 0; i < _innerWoods.Length; ++i)
         {
-            if (Random.Range(1, 11) < innerWoodSpawnPercentage)
+            if (Random.Range(1, 11) <= innerWoodSpawnPercentage)
             {
                 _innerWoods[i].SetActive(true);
             }
@@ -34,7 +36,7 @@ public class ForestLine : MonoBehaviour
 
         for (int i = 0; i < _outterWoods.Length; ++i)
         {
-            if (Random.Range(1, 11) < outterWoodSpawnPercentage)
+            if (Random.Range(1, 11) <= outterWoodSpawnPercentage)
             {
                 _outterWoods[i].SetActive(true);
             }
