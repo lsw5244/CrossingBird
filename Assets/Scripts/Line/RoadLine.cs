@@ -67,15 +67,7 @@ public class RoadLine : MonoBehaviour
             {
                 SetSpawnCarPosition();
 
-                // Y회전값이 0이면 오른쪽으로 향하기, 180이면 왼쪽으로 향하기
-                if (_carMoveDirection == CarMoveDirection.Right)
-                {
-                    _selectCar.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                }
-                else
-                {
-                    _selectCar.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-                }
+                SetSpawnCarRotation();
 
                 _selectCar.SetActive(true);
             }
@@ -89,6 +81,19 @@ public class RoadLine : MonoBehaviour
         _carSpawnPosition.y = _selectCar.transform.position.y;
         _carSpawnPosition.z = transform.position.z;
         _selectCar.transform.position = _carSpawnPosition;
+    }
+
+    void SetSpawnCarRotation()
+    {
+        // Y회전값이 0이면 오른쪽으로 향하기, 180이면 왼쪽으로 향하기
+        if (_carMoveDirection == CarMoveDirection.Right)
+        {
+            _selectCar.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        else
+        {
+            _selectCar.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
     }
 
 }
