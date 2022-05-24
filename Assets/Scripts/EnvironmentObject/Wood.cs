@@ -7,6 +7,7 @@ public class Wood : MonoBehaviour
     [SerializeField]
     private GameObject[] _leafs;
 
+    [Range(0, 10)]
     public int leapAddPercentage = 5;
 
     private void OnEnable()
@@ -15,7 +16,7 @@ public class Wood : MonoBehaviour
 
         for (int i = 1; i < _leafs.Length; ++i)
         {
-            if(Random.Range(1, 11) < leapAddPercentage)     // 30% È®·ü·Î ÀÙ Ãß°¡ »ý¼º
+            if(Random.Range(1, 11) <= leapAddPercentage)
             {
                 _leafs[i].SetActive(true);
                 continue;
