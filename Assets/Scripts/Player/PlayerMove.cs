@@ -109,7 +109,7 @@ public class PlayerMove : MonoBehaviour
             {
                 GameManager.Instance.GameOver();
                 GetComponent<BoxCollider>().isTrigger = true;
-                GetComponent<Rigidbody>().AddForce(hit.transform.position - transform.position * 100f);
+                GetComponent<Rigidbody>().AddForce(transform.position - hit.transform.position * 100f);
             }
             return;
         }
