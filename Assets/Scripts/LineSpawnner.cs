@@ -48,11 +48,11 @@ public class LineSpawnner : MonoBehaviour
         // 카메라 기준에서 일정거리 
         if (_spawnZPos - _cameraTransfom.position.z < _spawnBlockDistance)
         {
-            SpawnBlock();
+            SpawnLine();
         }
     }
 
-    void SpawnBlock()
+    void SpawnLine()
     {
         while(true)
         {
@@ -65,15 +65,15 @@ public class LineSpawnner : MonoBehaviour
             break;
         }
 
-        GameObject block = GetBlock((LineType)_randomIndex);
-        block.transform.position = Vector3.forward * _spawnZPos;
+        GameObject line = GetLine((LineType)_randomIndex);
+        line.transform.position = Vector3.forward * _spawnZPos;
         {
-            block.SetActive(true);
+            line.SetActive(true);
         }
         _spawnZPos++;
     }
 
-    GameObject GetBlock(LineType type)
+    GameObject GetLine(LineType type)
     {
         for (int i = 0; i < _PoolSize; ++i)
         {
@@ -83,7 +83,7 @@ public class LineSpawnner : MonoBehaviour
             }
         }
 
-        Debug.LogError("라인POOL에 있는 블럭이 부족함 !");
+        Debug.LogError("라인POOL에 있는 라인이 부족함 !");
         return null;
     }
 }
