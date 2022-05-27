@@ -66,15 +66,8 @@ public class FlowingWaterLine : MonoBehaviour
             }
 
             SetBoardSpawnPosition();
+            SetBoardSpawnRotation();
 
-            if (_boardMoveDirection == BoardMoveDirection.Right)
-            {
-                _selectBoard.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            }
-            else
-            {
-                _selectBoard.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-            }
             _selectBoard.SetActive(true);
         }
     }
@@ -98,5 +91,17 @@ public class FlowingWaterLine : MonoBehaviour
         _boardSpawnPosition.y = _selectBoard.transform.position.y;
         _boardSpawnPosition.z = transform.position.z;
         _selectBoard.transform.position = _boardSpawnPosition;
+    }
+
+    void SetBoardSpawnRotation()
+    {
+        if (_boardMoveDirection == BoardMoveDirection.Right)
+        {
+            _selectBoard.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        else
+        {
+            _selectBoard.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
     }
 }
